@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="toggleMenu()">
+    <mat-icon>
+      menu
+    </mat-icon>
+  </button>
+  <span>Status green</span>
+</mat-toolbar>
+<mat-sidenav-container class="app-container" (backdropClick)="menuOpened=false;">
+  <mat-sidenav mode="slide" [opened]="menuOpened">
+    <a [routerLink]="['/dashboard']" routerLinkActive="router-link-active">Dashboard</a>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div [@routerTransition]="getState(outlet)">
+      <router-outlet #outlet="outlet"></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

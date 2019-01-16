@@ -1,0 +1,20 @@
+:host {
+  display: block;
+  position: relative;
+
+  .card {
+    z-index: 10;
+    background: white;
+    touch-action: pan-y !important;
+  }
+
+  .context-menu {
+    position: absolute;
+    background-color: lighten(gray, 46);
+    width: 30%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -10;
+  }
+}
